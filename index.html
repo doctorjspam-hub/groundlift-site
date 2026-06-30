@@ -1,54 +1,101 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
+<!doctype html>
+<html lang="en">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta http-equiv="Content-Style-Type" content="text/css">
-  <title></title>
-  <meta name="Generator" content="Cocoa HTML Writer">
-  <meta name="CocoaVersion" content="2575.7">
-  <style type="text/css">
-    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; -webkit-text-stroke: #000000}
-    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; -webkit-text-stroke: #000000; min-height: 14.0px}
-    span.s1 {font-kerning: none}
-  </style>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>World Cup 2026 Interactive Knockout Bracket</title>
+<style>
+:root{
+  --bg:#f7f8fb;--card:#fff;--ink:#111827;--muted:#667085;--line:#b8c0cc;--soft:#eef2f7;
+  --complete:#e7f8ed;--live:#fff4d6;--future:#fff;--danger:#fb7185;
+}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+.app{max-width:1280px;margin:0 auto;padding:12px}.top{display:flex;gap:12px;align-items:flex-start;justify-content:space-between;margin-bottom:8px}
+h1{font-size:22px;line-height:1;margin:0 0 4px}.sub{font-size:12px;color:var(--muted);margin:0}.controls{display:flex;flex-wrap:wrap;gap:6px;justify-content:flex-end}.controls label{background:#fff;border:1px solid #d7dde7;border-radius:999px;padding:6px 9px;font-size:12px;white-space:nowrap}.controls input{vertical-align:-2px}
+.bracket{position:relative;display:grid;grid-template-columns:1.35fr 1.1fr 1.05fr .95fr .9fr;gap:16px;min-height:610px;overflow:auto;padding:4px 2px 10px}.col{display:flex;flex-direction:column;justify-content:space-around;min-width:185px;gap:5px}.round{font-size:12px;font-weight:800;text-align:center;text-transform:uppercase;letter-spacing:.08em;padding:6px;border-radius:10px;background:#e9eef8;margin-bottom:4px}.qf .round{background:#fff1bf}.sf .round{background:#ffe1c7}.final .round{background:#daf6de}.game{position:relative;background:var(--card);border:1px solid #d7dde7;border-radius:10px;padding:7px 8px;box-shadow:0 1px 2px rgba(16,24,40,.05);min-height:76px}.game.complete{background:var(--complete)}.game.live{background:var(--live)}.game.future{background:var(--future)}.game .id{position:absolute;right:7px;top:5px;color:#98a2b3;font-size:10px}.teams{font-size:12px;font-weight:800;line-height:1.2;margin-right:22px}.winner{color:#0a7f42}.loser{color:#667085;text-decoration:line-through}.meta{display:flex;align-items:center;gap:4px;flex-wrap:wrap;margin-top:5px;font-size:10.5px;color:#344054}.pill{display:inline-block;color:#fff;border-radius:5px;padding:2px 6px;font-weight:800;font-size:10px;line-height:1.2}.tv{display:inline-block;background:#111;color:#fff;border-radius:4px;padding:1px 4px;font-size:10px;font-weight:900}.fs1{background:#243b6b}.tel{background:#cf1f2f}.status{font-weight:800}.note{font-size:9.5px;color:#667085;margin-top:3px}.stadium,.spanish,.statusLine{display:inline}.hide-tv .tv,.hide-tv .tvLabel{display:none}.hide-spanish .spanish{display:none}.hide-stadium .stadium{display:none}.hide-results .score,.hide-results .winner,.hide-results .loser,.hide-results .statusLine{display:none}.no-colors .pill{background:#6b7280!important}.legend{display:grid;grid-template-columns:1.4fr .7fr .8fr 1fr;gap:10px;margin-top:8px}.panel{background:#fff;border:1px solid #d7dde7;border-radius:12px;padding:9px}.panel h2{font-size:12px;margin:0 0 6px;text-transform:uppercase;letter-spacing:.08em}.cities{display:flex;flex-wrap:wrap;gap:6px}.dot{width:9px;height:9px;border-radius:50%;display:inline-block;margin-right:4px}.cityItem{font-size:11px;white-space:nowrap}.sources a{display:block;font-size:11px;color:#155eef;text-decoration:none;margin:2px 0}.sources a:hover{text-decoration:underline}.third{margin-top:14px}.compact .game{padding:5px 6px;min-height:62px}.compact .teams{font-size:11px}.compact .meta{font-size:9.5px}.compact .round{font-size:10px;padding:5px}.compact .bracket{gap:10px;min-height:555px}.compact .col{min-width:170px}.printHint{font-size:10px;color:#667085;margin-top:5px}@media(max-width:900px){.top{display:block}.controls{justify-content:flex-start;margin-top:8px}.bracket{grid-template-columns:repeat(5,170px)}.legend{grid-template-columns:1fr 1fr}}@media print{body{background:#fff}.app{max-width:none;padding:4mm}.controls,.sources,.printHint{display:none}.bracket{overflow:visible;gap:8px;min-height:145mm}.game{break-inside:avoid}.legend{grid-template-columns:1.5fr .7fr .8fr .8fr}.panel{padding:5px}h1{font-size:18px}.sub{font-size:10px}}
+</style>
 </head>
-<body>
-<p class="p1"><span class="s1">&lt;!DOCTYPE html&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1">&lt;html&gt;</span></p>
-<p class="p1"><span class="s1">&lt;head&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;title&gt;GroundLift&lt;/title&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;meta charset="utf-8"&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;style&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>body {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>background: black;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>margin: 0;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>display: flex;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>justify-content: center;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>align-items: center;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>min-height: 100vh;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>iframe {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>width: 90vw;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>max-width: 1400px;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>aspect-ratio: 16 / 9;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>border: none;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;/style&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1">&lt;/head&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1">&lt;body&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1">&lt;iframe</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>src="https://www.youtube.com/embed/IsYQ46d9YiE?mute=1"</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>title="GroundLift"</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>allowfullscreen&gt;</span></p>
-<p class="p1"><span class="s1">&lt;/iframe&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1">&lt;/body&gt;</span></p>
-<p class="p1"><span class="s1">&lt;/html&gt;</span></p>
+<body class="compact">
+<div class="app" id="app">
+  <div class="top">
+    <div><h1>FIFA World Cup 2026 — Interactive Knockout Bracket</h1><p class="sub">Compact iPad landscape view. Times shown in ET. Click source links at bottom. Data snapshot: Jun 29, 2026 evening PT.</p></div>
+    <div class="controls">
+      <label><input type="checkbox" id="compact" checked> compact</label>
+      <label><input type="checkbox" id="colors" checked> city colors</label>
+      <label><input type="checkbox" id="tv" checked> TV</label>
+      <label><input type="checkbox" id="spanish" checked> Spanish TV</label>
+      <label><input type="checkbox" id="stadium"> stadiums</label>
+      <label><input type="checkbox" id="results" checked> results/status</label>
+    </div>
+  </div>
+  <div class="bracket" id="bracket"></div>
+  <div class="legend">
+    <div class="panel"><h2>United States host cities</h2><div class="cities" id="usCities"></div></div>
+    <div class="panel"><h2>Canada</h2><div class="cities" id="caCities"></div></div>
+    <div class="panel"><h2>Mexico</h2><div class="cities" id="mxCities"></div></div>
+    <div class="panel sources"><h2>Sources</h2>
+      <a href="https://www.foxsports.com/soccer/fifa-world-cup/schedule" target="_blank" rel="noreferrer">FOX Sports live schedule</a>
+      <a href="https://www.foxsports.com/stories/soccer/how-watch-2026-fifa-world-cup-full-schedule-dates-every-match" target="_blank" rel="noreferrer">FOX watch/schedule article</a>
+      <a href="https://www.foxsports.com/stories/soccer/fifa-world-cup-2026-broadcast-schedule-record-70-matches-fox-34-fs1" target="_blank" rel="noreferrer">FOX broadcast schedule overview</a>
+      <a href="https://www.espn.com/soccer/schedule/_/league/fifa.world" target="_blank" rel="noreferrer">ESPN schedule cross-check</a>
+      <div class="printHint">Tip: Safari/Chrome → Share/Print → Landscape → Save PDF.</div>
+    </div>
+  </div>
+</div>
+<script>
+const cities={
+"Los Angeles":{c:"US",color:"#1847c7",stadium:"Los Angeles Stadium"},"Houston":{c:"US",color:"#306b9f",stadium:"Houston Stadium"},"Boston":{c:"US",color:"#0b3a88",stadium:"Boston Stadium"},"Monterrey":{c:"MX",color:"#a83a1e",stadium:"Monterrey Stadium"},"New York/New Jersey":{c:"US",color:"#062b6f",stadium:"New York New Jersey Stadium"},"Miami":{c:"US",color:"#0aa6b8",stadium:"Miami Stadium"},"Dallas":{c:"US",color:"#1463d8",stadium:"Dallas Stadium"},"Philadelphia":{c:"US",color:"#4b5bdc",stadium:"Philadelphia Stadium"},"Kansas City":{c:"US",color:"#2b6cb0",stadium:"Kansas City Stadium"},"Seattle":{c:"US",color:"#18849a",stadium:"Seattle Stadium"},"San Francisco":{c:"US",color:"#00658a",stadium:"San Francisco Bay Area Stadium"},"Atlanta":{c:"US",color:"#4aaee8",stadium:"Atlanta Stadium"},"Mexico City":{c:"MX",color:"#b00020",stadium:"Mexico City Stadium"},"Guadalajara":{c:"MX",color:"#d91f3d",stadium:"Guadalajara Stadium"},"Toronto":{c:"CA",color:"#23a455",stadium:"Toronto Stadium"},"Vancouver":{c:"CA",color:"#0b6b2b",stadium:"Vancouver Stadium"}
+};
+const rounds=[
+{key:"r32", cls:"r32", title:"Round of 32", games:[
+{id:"73",teams:["South Africa","Canada"],score:"0–1",winner:"Canada",city:"Los Angeles",date:"Jun 28",time:"3:00 PM",tv:"FOX",spanish:"TEL/UNI",status:"Complete"},
+{id:"74",teams:["Brazil","Japan"],score:"2–1",winner:"Brazil",city:"Houston",date:"Jun 29",time:"1:00 PM",tv:"FOX",spanish:"TEL/UNI",status:"Complete"},
+{id:"75",teams:["Germany","Paraguay"],score:"1–1; PAR 4–3 pens",winner:"Paraguay",city:"Boston",date:"Jun 29",time:"4:30 PM",tv:"FOX",spanish:"TEL/UNI",status:"Complete"},
+{id:"76",teams:["Netherlands","Morocco"],score:"1–1 live snapshot",winner:null,city:"Monterrey",date:"Jun 29",time:"9:00 PM",tv:"FOX",spanish:"TEL/UNI",status:"Live / unresolved"},
+{id:"77",teams:["Ivory Coast","Norway"],city:"New York/New Jersey",date:"Jun 30",time:"1:00 PM",tv:"FOX",spanish:"TEL/UNI",status:"Scheduled"},
+{id:"78",teams:["France","Sweden"],city:"New York/New Jersey",date:"Jun 30",time:"5:00 PM",tv:"FOX",spanish:"TEL/UNI",status:"Scheduled"},
+{id:"79",teams:["Mexico","Ecuador"],city:"Mexico City",date:"Jun 30",time:"9:00 PM",tv:"FOX",spanish:"TEL/UNI",status:"Scheduled"},
+{id:"80",teams:["England","DR Congo"],city:"Toronto",date:"Jul 1",time:"12:00 PM",tv:"FOX",spanish:"TEL/UNI",status:"Scheduled"},
+{id:"81",teams:["Belgium","Senegal"],city:"Seattle",date:"Jul 1",time:"4:00 PM",tv:"FOX",spanish:"TEL/UNI",status:"Scheduled"},
+{id:"82",teams:["United States","Bosnia & Herzegovina"],city:"Dallas",date:"Jul 1",time:"8:00 PM",tv:"FOX",spanish:"TEL/UNI",status:"Scheduled"},
+{id:"83",teams:["Spain","Austria"],city:"Kansas City",date:"Jul 2",time:"3:00 PM",tv:"FOX",spanish:"TEL/UNI",status:"Scheduled"},
+{id:"84",teams:["Portugal","Croatia"],city:"Atlanta",date:"Jul 2",time:"7:00 PM",tv:"FOX",spanish:"TEL/UNI",status:"Scheduled"},
+{id:"85",teams:["Switzerland","Algeria"],city:"San Francisco",date:"Jul 2",time:"11:00 PM",tv:"FS1",spanish:"TEL/UNI",status:"Scheduled"},
+{id:"86",teams:["Australia","Egypt"],city:"Philadelphia",date:"Jul 3",time:"2:00 PM",tv:"FOX",spanish:"TEL/UNI",status:"Scheduled"},
+{id:"87",teams:["Argentina","Cape Verde"],city:"Seattle",date:"Jul 3",time:"6:00 PM",tv:"FOX",spanish:"TEL/UNI",status:"Scheduled"},
+{id:"88",teams:["Colombia","Ghana"],city:"Miami",date:"Jul 3",time:"9:30 PM",tv:"FS1",spanish:"TEL/UNI",status:"Scheduled"}
+]},
+{key:"r16",cls:"r16",title:"Round of 16",games:[
+{id:"89",teams:["Canada","Winner 76"],city:"Dallas",date:"Jul 4",time:"1:00 PM",tv:"FOX",spanish:"TEL/UNI",status:"Scheduled"},
+{id:"90",teams:["Paraguay","Winner 78"],city:"Atlanta",date:"Jul 4",time:"5:00 PM",tv:"FOX",spanish:"TEL/UNI",status:"Scheduled"},
+{id:"91",teams:["Brazil","Winner 77"],city:"New York/New Jersey",date:"Jul 5",time:"4:00 PM",tv:"FOX",spanish:"TEL/UNI",status:"Scheduled"},
+{id:"92",teams:["Winner 79","Winner 80"],city:"Mexico City",date:"Jul 5",time:"8:00 PM",tv:"FOX",spanish:"TEL/UNI",status:"Scheduled"},
+{id:"93",teams:["Winner 84","Winner 83"],city:"Vancouver",date:"Jul 6",time:"3:00 PM",tv:"FOX",spanish:"TEL/UNI",status:"Scheduled"},
+{id:"94",teams:["Winner 82","Winner 81"],city:"Dallas",date:"Jul 6",time:"8:00 PM",tv:"FS1",spanish:"TEL/UNI",status:"Scheduled"},
+{id:"95",teams:["Winner 87","Winner 86"],city:"Seattle",date:"Jul 7",time:"12:00 PM",tv:"FOX",spanish:"TEL/UNI",status:"Scheduled"},
+{id:"96",teams:["Winner 85","Winner 88"],city:"Atlanta",date:"Jul 7",time:"4:00 PM",tv:"FOX",spanish:"TEL/UNI",status:"Scheduled"}
+]},
+{key:"qf",cls:"qf",title:"Quarterfinals",games:[
+{id:"97",teams:["Winner 90","Winner 89"],city:"Boston",date:"Jul 9",time:"4:00 PM",tv:"FOX",spanish:"TEL/UNI",status:"Scheduled"},
+{id:"98",teams:["Winner 93","Winner 94"],city:"Los Angeles",date:"Jul 10",time:"3:00 PM",tv:"FOX",spanish:"TEL/UNI",status:"Scheduled"},
+{id:"99",teams:["Winner 91","Winner 92"],city:"Miami",date:"Jul 11",time:"5:00 PM",tv:"FOX",spanish:"TEL/UNI",status:"Scheduled"},
+{id:"100",teams:["Winner 95","Winner 96"],city:"Kansas City",date:"Jul 11",time:"9:00 PM",tv:"FS1",spanish:"TEL/UNI",status:"Scheduled"}
+]},
+{key:"sf",cls:"sf",title:"Semifinals",games:[
+{id:"101",teams:["Winner 97","Winner 98"],city:"Dallas",date:"Jul 14",time:"3:00 PM",tv:"FOX",spanish:"TEL/UNI",status:"Scheduled"},
+{id:"102",teams:["Winner 99","Winner 100"],city:"Atlanta",date:"Jul 15",time:"3:00 PM",tv:"FOX",spanish:"TEL/UNI",status:"Scheduled"}
+]},
+{key:"f",cls:"final",title:"Final / Third",games:[
+{id:"104",teams:["Winner 101","Winner 102"],city:"New York/New Jersey",date:"Jul 19",time:"3:00 PM",tv:"FOX",spanish:"TEL/UNI",status:"Scheduled",special:"🏆 Final"},
+{id:"103",teams:["Loser 101","Loser 102"],city:"Miami",date:"Jul 18",time:"5:00 PM",tv:"FOX",spanish:"TEL/UNI",status:"Scheduled",special:"🥉 Third place"}
+]}
+];
+function gameClass(g){return g.status.startsWith('Complete')?'complete':g.status.startsWith('Live')?'live':'future'}
+function teamLine(t,g){let cls=''; if(g.winner){cls=t===g.winner?'winner':'loser'} return `<div class="${cls}">${t}</div>`}
+function render(){const b=document.getElementById('bracket');b.innerHTML='';rounds.forEach(r=>{const col=document.createElement('div');col.className=`col ${r.cls}`;col.innerHTML=`<div class="round">${r.title}</div>`+r.games.map(g=>{const c=cities[g.city];return `<div class="game ${gameClass(g)}"><div class="id">${g.special||'#'+g.id}</div><div class="teams">${g.teams.map(t=>teamLine(t,g)).join('')}</div><div class="meta"><span class="pill" style="background:${c.color}">${g.city}</span><span>${g.date} • ${g.time}</span><span class="tv ${g.tv==='FS1'?'fs1':''}">${g.tv}</span><span class="spanish"><span class="tv tel">ES</span></span></div><div class="note"><span class="score">${g.score?g.score+' • ':''}</span><span class="statusLine status">${g.status}</span><span class="stadium"> • ${c.stadium}</span></div></div>`}).join('');b.appendChild(col)});renderLegend()}
+function renderLegend(){[['usCities','US'],['caCities','CA'],['mxCities','MX']].forEach(([el,country])=>{document.getElementById(el).innerHTML=Object.entries(cities).filter(([_,v])=>v.c===country).map(([name,v])=>`<span class="cityItem"><span class="dot" style="background:${v.color}"></span>${name}</span>`).join('')})}
+function apply(){document.body.classList.toggle('compact',document.getElementById('compact').checked);document.body.classList.toggle('no-colors',!document.getElementById('colors').checked);document.body.classList.toggle('hide-tv',!document.getElementById('tv').checked);document.body.classList.toggle('hide-spanish',!document.getElementById('spanish').checked);document.body.classList.toggle('hide-stadium',!document.getElementById('stadium').checked);document.body.classList.toggle('hide-results',!document.getElementById('results').checked)}
+render();document.querySelectorAll('input').forEach(i=>i.addEventListener('change',apply));apply();
+</script>
 </body>
 </html>
