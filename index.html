@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>GroundLift</title>
+<style>
+  :root { color-scheme:dark; }
+  * { box-sizing:border-box; }
+  body { margin:0; background:#000; color:#fff; font-family:Arial,sans-serif; }
+  main { max-width:1440px; margin:auto; padding:12px; display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; }
+  .tile { position:relative; margin:0; background:#111; min-width:0; cursor:pointer; border:0; padding:0; color:inherit; text-align:left; }
+  video { display:block; width:100%; aspect-ratio:16/9; object-fit:contain; background:#000; pointer-events:none; }
+  .tile:focus-visible { outline:2px solid white; outline-offset:2px; }
+  .tile.active:after { content:'♪'; position:absolute; top:10px; right:10px; color:white; background:#000a; border-radius:30px; padding:5px 10px; font-size:18px; }
+  @media(max-width:700px){main{grid-template-columns:1fr;gap:8px;padding:8px}}
+  @media(prefers-reduced-motion:reduce){video{animation:none}}
+</style>
+</head>
+<body>
+<main id="gallery" aria-label="GroundLift video gallery"></main>
+<script>
+const files = ["01.mp4", "02.mp4", "03.mp4", "04.mp4", "05.mp4", "06.mp4", "07.mp4", "08.mp4", "09.mp4", "10.mp4", "11.mp4", "12.mp4", "13.mp4", "14.mp4", "15.mp4", "16.mp4", "17.mp4", "18.mp4", "19.mp4", "20.mp4"];
+const gallery = document.querySelector('#gallery');
+const players = [];
+let audible = null;
+function silence() {
+  if (audible) audible.parentElement.classList.remove('active');
+  players.forEach(v => { v.muted = true; v.defaultMuted = true; });
+  audible = null;
+}
+files.forEach((file, index) => {
+  const tile = document.createElement('button');
+  tile.type = 'button'; tile.className = 'tile';
+  tile.setAttribute('aria-label', `Toggle sound for video ${index + 1}`);
+  const video = document.createElement('video');
+  video.src = 'videos/' + file;
+  video.muted = true; video.defaultMuted = true;
+  video.autoplay = true; video.loop = true; video.playsInline = true;
+  video.preload = 'none';
+  tile.appendChild(video); gallery.appendChild(tile); players.push(video);
+  tile.addEventListener('click', () => {
+    if (audible === video) { silence(); return; }
+    silence();
+    audible = video; video.muted = false; video.defaultMuted = false;
+    tile.classList.add('active');
+    video.play().catch(() => { silence(); });
+  });
+});
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    const video = entry.target.querySelector('video');
+    if (entry.isIntersecting) {
+      video.play().catch(() => {});
+    } else {
+      video.pause();
+      if (audible === video) silence();
+    }
+  });
+}, { threshold:0.15, rootMargin:'120px 0px 120px 0px' });
+document.querySelectorAll('.tile').forEach(tile => observer.observe(tile));
+document.addEventListener('visibilitychange', () => {
+  if (document.hidden) { players.forEach(v=>v.pause()); silence(); }
+  else { document.querySelectorAll('.tile').forEach(tile => {
+    const rect=tile.getBoundingClientRect();
+    if(rect.bottom>0 && rect.top<innerHeight) tile.querySelector('video').play().catch(()=>{});
+  }); }
+});
+</script>
+</body>
+</html>
